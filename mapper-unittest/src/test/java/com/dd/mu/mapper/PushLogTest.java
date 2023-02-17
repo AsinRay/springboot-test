@@ -8,16 +8,14 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.List;
 
 
-// @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-// @Rollback(value = false)
-// @ActiveProfiles("test")
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@Rollback(value = true)
+@ActiveProfiles("test")
 
 @MybatisTest
 public class PushLogTest {

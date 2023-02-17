@@ -1,7 +1,8 @@
-package com.dd.mu;
+package com.dd.mu.jackson;
 
 import org.junit.jupiter.api.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class )
 @DisplayName("JUnit5 测试用例")
 public class JUnit5Demo {
     @BeforeAll
@@ -24,18 +25,22 @@ public class JUnit5Demo {
         System.out.println("在每一个测试方法结束后执行,执行次数与测试的方法数相同 ]]");
     }
 
+    @Order(1)
     @DisplayName("第一个测试")
     @Test
     void theArenaTest() {
         System.out.println("first test");
     }
 
+    @Order(3)
     @DisplayName("third")
     @Test
     void theThirdTest() {
         System.out.println("third test");
     }
 
+
+    @Order(2)
     @DisplayName("second")
     @Test
     void theSecondTest() {
